@@ -8,7 +8,7 @@ import "@zk-email/contracts/utils/StringUtils.sol";
 import { Verifier } from "./verifier.sol";
 
 
-contract ProofOfReceivedEmailFromDhruv is ERC721Enumerable {
+contract ProofOfReceivedEmailFromDhruv {
     using StringUtils for *;
 
     uint16 public constant bytesInPackedBytes = 31;
@@ -26,7 +26,7 @@ contract ProofOfReceivedEmailFromDhruv is ERC721Enumerable {
 
     mapping(string => address) public emailAddresstoEthereumAddress;
 
-    constructor(Verifier v, DKIMRegistry d) ERC721("VerifiedEmail", "VerifiedEmail") {
+    constructor(Verifier v, DKIMRegistry d) {
         verifier = v;
         dkimRegistry = d;
     }
